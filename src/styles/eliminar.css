@@ -1,0 +1,31 @@
+.Eliminar{
+    position: absolute;
+    margin: auto;
+    padding: 30px 20px 30px 30px;
+    top: 25%;
+    left: 35%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    z-index: 3;
+    width: 30%;
+    height: 30%;
+    overflow: auto;
+}
+
+.blur{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: blur(40px);
+    -webkit-filter: blur(40px);
+    background-color: black;
+    opacity: 0.5;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+  .botones{
+      text-align: center;
+  }

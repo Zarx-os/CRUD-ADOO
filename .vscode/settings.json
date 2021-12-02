@@ -1,0 +1,7 @@
+{
+    "editor.fontSize": 12,
+    "workbench.colorTheme": "Monokai",
+    "workbench.preferredDarkColorTheme": "Monokai Dimmed",
+    "workbench.tree.indent": 18,
+    "workbench.view.alwaysShowHeaderActions": true
+}
