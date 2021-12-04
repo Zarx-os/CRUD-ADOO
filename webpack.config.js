@@ -4,7 +4,7 @@ const { runtime } = require('webpack');
 
 module.exports = {
     mode: 'production',
-    entry: './src/App.js',
+    entry: './src/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'build'),

@@ -2,20 +2,20 @@ import "../styles/eliminar.css";
 import axios from "axios";
 import {useHistory} from "react-router"
 export default function Eliminar(props){
-
+  let history=useHistory();
     const handleSi = (e) => {
       const url = '/2CM13ID3IDT7/Eliminar';
       axios.get(url+`?id=${props.id}`).then((response) => {
           console.log(response);
-          if(response.status=="200")location.assign("/2CM13ID3IDT7");
+          if(response.status=="200")history.goBack();
         }, (error) => {
           console.log(error);
         });
       }
       
-      let history=useHistory();
+      
     const handleNo = (e) => {
-        history.push("/2CM13IDIDT7");
+        history.goBack();
       }
 
 

@@ -13,10 +13,10 @@ function Tap (props){
          <Link to={props.ruta} className="Links">{props.contenido}</Link>     
       </button>
       <Switch>
-         <Route exact path="/2CM13ID3IDT7/crear"><Crear id={props.id} /></Route>
-         <Route exact path="/2CM13ID3IDT7/modificar"><Modificar id={props.id}/></Route>
-         <Route exact path="/2CM13ID3IDT7/visualizar"><Visualizar id={props.id}/></Route>
-         <Route exact path="/2CM13ID3IDT7/eliminar"><Eliminar id={props.id}/></Route>
+         <Route exact path="/2CM13ID3IDT7/App/crear"><Crear id={props.id} /></Route>
+         <Route exact path="/2CM13ID3IDT7/App/modificar"><Modificar id={props.id}/></Route>
+         <Route exact path="/2CM13ID3IDT7/App/visualizar"><Visualizar id={props.id}/></Route>
+         <Route exact path="/2CM13ID3IDT7/App/eliminar"><Eliminar id={props.id}/></Route>
       </Switch>
       </Router>
    );

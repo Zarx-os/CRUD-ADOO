@@ -1,52 +1,55 @@
 
-import { Component } from "react";
+import {  useState ,useEffect } from "react";
 import "../styles/crear.css";
 import axios from "axios";
-export default class Visualizar extends Component{
-    
+import App from "./App";
+import { useHistory } from "react-router";
 
-    constructor(props) {
-
-        super(props);
-        this.state = {
+export default function Visualizar (props){
+    let count=1;
+    let history=useHistory();
+    const [datos,setDatos]=useState({
             data2: [],
             showAlert2: false,
             alertText2: "",
             id:props.id,
             pregunta:"",
             respuesta:""
-        }
-    }    
+        })
 
-    componentDidMount() {
-        axios.get("http://localhost:8080/2CM13ID3IDT7/Preguntas").then(response2 => {
-            this.setState({ data2: response2.data});
-            this.state.data2.map(e=>{
-                if(this.state.id==e["id"]){
-                    this.setState({pregunta:e["pregunta"],respuesta:e["respuesta"]});
+        useEffect(() => {
+            axios.get("http://localhost:8080/2CM13ID3IDT7/Preguntas").then(response2 => {
+            setDatos({ data2: response2.data});
+            response2.data.map(e=>{
+                if(datos.id==e["id"]){
+                    setDatos({pregunta:e["pregunta"],respuesta:e["respuesta"]});
                 }
             })
         }).catch(error2 => {
             console.info(error2);
-            this.setState({ showAlert2: true, alertText2: "ERROR EN LA OBTENCION DE DATOS" });
+            setDatos({ showAlert2: true, alertText2: "ERROR EN LA OBTENCION DE DATOS" });
         })
-    }
-    
-    
-    render(){
-        const {data2,showAlert2,alertText2,id,pregunta,respuesta}=this.state;
-        return(<>
+        },[count])
+        
+
+
+  const d=()=>{
+      history.goBack();
+    }   
+
+        return(
+        <>
         <div className="imagen"></div>
         <div className="Crear">
-            <h1>Pregunta No.{id}</h1>
+            <h1>Pregunta No.{props.id}</h1>
             <p><b>Pregunta:</b></p><hr/>
-            <p>{pregunta}</p>
+            <p>{datos.pregunta}</p>
             <p><b>Respuesta:</b></p><hr/>
-            <p>{respuesta}</p>
-            <button className="boton" onClick={()=>window.location.assign("/2CM13ID3IDT7")}>Regresar</button>
-        
+            <p>{datos.respuesta}</p>
+            <button onClick={d}>Regresar</button>
             </div>
         </>  
         );
 }
-}
+
+
