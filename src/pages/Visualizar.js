@@ -2,7 +2,6 @@
 import {  useState ,useEffect } from "react";
 import "../styles/crear.css";
 import axios from "axios";
-import App from "./App";
 import { useHistory } from "react-router";
 
 export default function Visualizar (props){
