@@ -6,9 +6,9 @@ function Pregunta(props){
         <tr>
             <td>Pregunta {props.id}</td>
             <td>
-                <Tap id={props.id} ruta="/2CM13ID3IDT7/App/modificar" contenido="Modificar"/>
-                <Tap id={props.id} ruta="/2CM13ID3IDT7/App/eliminar" contenido="Eliminar"/>
-                <Tap id={props.id} ruta="/2CM13ID3IDT7/App/visualizar" contenido="Visualizar"/>
+                <Tap id={props.id} ruta="/modificar" contenido="Modificar"/>
+                <Tap id={props.id} ruta="/eliminar" contenido="Eliminar"/>
+                <Tap id={props.id} ruta="/visualizar" contenido="Visualizar"/>
             </td>
         </tr>);
 }

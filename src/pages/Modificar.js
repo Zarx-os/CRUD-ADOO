@@ -16,7 +16,7 @@ export default function Modificar(props){
         const url = '/2CM13ID3IDT7/Modificar';
         axios.get(url+`?id=${datos.id}&pregunta=${datos.pregunta}&respuesta=${datos.respuesta}`).then((response) => {
             console.log(response);
-            if(response.status=="200")history.goBack();
+            if(response.status=="200")window.location.replace("/2CM13ID3IDT7/#/App");
           }, (error) => {
             console.log(error);
           });

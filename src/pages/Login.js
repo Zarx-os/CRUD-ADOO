@@ -1,29 +1,32 @@
 import "../styles/styles.css"
 import { useState } from "react";
 import axios from "axios";
-import { Switch, useHistory,Route } from "react-router";
+import { Switch, useHistory,Route, HashRouter } from "react-router-dom";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { BrowserRouter as Router } from "react-router-dom";
+
 export default function Login(props){
 
     let history=useHistory();
 
     const [datos,setDatos]=useState({user:'',pass:''});
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const url = '/2CM13ID3IDT7/Login';
         axios.get(url+`?user=${datos.user}&pass=${datos.pass}`).then((response) => {
-            //console.log(response.data);
-            if(response.data==true) {ReactDOM.render(
-            <Router>
-              {history.push("/2CM13ID3IDT7/App")}
+            if(response.data==true) {
+              localStorage.setItem('auth',true);
+              localStorage.setItem('user',datos.user);
+              ReactDOM.render(
+            <HashRouter>
+              {history.push("/App")}
               <Switch>
-                <Route exact path="/2CM13ID3IDT7/App"><App/></Route>
+                <Route exact path="/App"><App/></Route>
               </Switch>
-            </Router>
+            </HashRouter>
             ,document.getElementById("root"))}
-            else window.alert("No pudo iniciar sesión");
+            else window.alert("El usuario o la contraseña que ingresaste no estan registrados");
           }, (error) => {
             console.log(error);
           });

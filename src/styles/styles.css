@@ -204,9 +204,10 @@
     position: relative;
     left: 50%;
     top:10%;
-    scale: 200%;
     width: 30%;
     height: 0;
+    -webkit-transform: scale(2.0);
+    -moz-transform: scale(2.0);
   }
 
   .respuesta{
@@ -246,4 +247,15 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.usuario{
+  position: relative;
+  width: 100%;
+}
+.salirUsuario{
+  left: 80%;
+  position: relative;
+  background: crimson;
+  color: white;
 }

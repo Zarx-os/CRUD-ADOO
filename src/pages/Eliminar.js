@@ -7,7 +7,9 @@ export default function Eliminar(props){
       const url = '/2CM13ID3IDT7/Eliminar';
       axios.get(url+`?id=${props.id}`).then((response) => {
           console.log(response);
-          if(response.status=="200")history.goBack();
+          if(response.status=="200"){
+            window.location.replace("/2CM13ID3IDT7/#/App");
+          }
         }, (error) => {
           console.log(error);
         });
@@ -15,7 +17,7 @@ export default function Eliminar(props){
       
       
     const handleNo = (e) => {
-        history.goBack();
+          history.goBack();
       }
 
 
