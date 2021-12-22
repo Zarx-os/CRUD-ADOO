@@ -43,9 +43,9 @@ input[type=text], select {
     text-decoration: none;
   }
   .boton{
-    position: absolute;
+    position: relative;
     top: 80%;
-    left: 35%;
+    left: 38%;
   }
   .equis{
     width: 40px;
@@ -53,4 +53,16 @@ input[type=text], select {
     height: 40px;
     left: 87%;
     top: 5%;
+  }
+
+
+  input[type=file]{
+    background-color: coral;
+    color: black;
+    border-radius: 5px;
+
+  }
+  #botonRegresar{
+    position: relative;
+    left: 35%;
   }

@@ -4,7 +4,6 @@ import Tap from "../componets/Tap"
 import "../styles/styles.css";
 import { useState ,useEffect } from "react";
 
-
 export default function App(){
 
     const[datos,setDatos]=useState({
@@ -37,7 +36,8 @@ useEffect(() => {
   <>
 
     {datos.data.map((e)=>{
-      datos.numero<e["id"]?setDatos({...datos,numero:parseInt(e["id"])+1}):console.log("1");
+      datos.numero==0?setDatos({...datos,numero:1}):console.log(".");
+      datos.numero<e["id"]?setDatos({...datos,numero:parseInt(e["id"])+1}):console.log("#####")
     })}
     <div className='usuario'>
       <span>Bienvenido {datos.user}</span>

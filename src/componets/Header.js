@@ -33,8 +33,8 @@ function Header(){
     <HashRouter>
     <div className="header">
     <div className="pruebas">
-        <Link to="/" className="headerLinks">Lab</Link>
-        <Link to="/probar" className="headerLinks">Probar</Link>
+        <Link to="/" className="headerLinks">Laboratorio</Link>
+        <Link to="/probar" className="headerLinks">Ejercicios</Link>
         </div>
         <Link to="/login" className="headerLinks">Login</Link>
     </div>
